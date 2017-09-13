@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Cocktail} from '../cocktail.model';
+import {Ingredient} from "../ingredient.model";
 
 @Injectable()
 export class CocktailService {
@@ -31,7 +32,14 @@ export class CocktailService {
   constructor() {
   }
 
-  selectCocktail(index: number): void {
-    this.cocktail.next(this.cocktails.value[index]);
+  getCocktail(index: number): Cocktail {
+    return this.cocktails.value[index];
+  }
+
+  addCocktail(cocktail: Cocktail) {
+    const cocktails = this.cocktails.value.slice();
+    cocktails.push({name: cocktail.name, img: cocktail.img, desc: cocktail.desc,
+      ingredients: cocktail.ingredients.map(ingredient => new Ingredient(ingredient.name, ingredient.quantity))});
+    this.cocktails.next(cocktails);
   }
 }
