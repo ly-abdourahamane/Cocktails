@@ -30,10 +30,9 @@ export class CockatailsDetailsComponent implements OnInit {
     });
   }
 
-  /* getUrl(): string[] {
-     return '/cocktails/' + this.index + '/edit';
-   }*/
-
+getUrl2() {
+  return `/cocktails/${this.index}/edit`;
+}
   // oubien
 
   getUrl() {

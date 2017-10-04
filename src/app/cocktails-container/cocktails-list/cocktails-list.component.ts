@@ -20,4 +20,9 @@ export class CocktailsListComponent implements OnInit {
       this.cocktails = cocktails;
     });
   }
+
+  pickCocktail(index: number) {
+    this.activeCocktail = index;
+    this.cocktailService.selectCocktail(index);
+  }
 }

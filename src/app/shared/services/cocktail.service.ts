@@ -42,4 +42,8 @@ export class CocktailService {
       ingredients: cocktail.ingredients.map(ingredient => new Ingredient(ingredient.name, ingredient.quantity))});
     this.cocktails.next(cocktails);
   }
+
+  selectCocktail(index: number) {
+    this.cocktail.next(this.cocktail.value[index]);
+  }
 }

@@ -10,7 +10,7 @@ import {PanierService} from '../../shared/services/panier.service';
 })
 export class IngredientsListComponent implements OnInit {
 
-  ingrdients: Ingredient[];
+  ingredients: Ingredient[];
   subscription: Subscription;
 
   constructor(private panierService: PanierService) {
@@ -18,7 +18,7 @@ export class IngredientsListComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.panierService.panier.subscribe((ingredients: Ingredient[]) =>
-      this.ingrdients = ingredients);
+      this.ingredients = ingredients);
   }
 
   ngOnDestory() {

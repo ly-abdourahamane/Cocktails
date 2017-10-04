@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {TabMenuModule, MenuItem} from 'primeng/primeng';
 
 
 @Component({
@@ -10,7 +9,7 @@ import {TabMenuModule, MenuItem} from 'primeng/primeng';
 })
 export class MenuComponent implements OnInit {
 
-  items: MenuItem[];
+  items: any;
 
   constructor() { }
 

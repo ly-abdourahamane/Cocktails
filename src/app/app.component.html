@@ -1,4 +1,25 @@
 <app-header></app-header>
+
 <div class="container">
- <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+  <h1 style="color: #2d3999;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;">Example de directive</h1>
+
+  <h4>Pick a highlight color</h4>
+  <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Vert
+    <input type="radio" name="colors" (click)="color='yellow'">Jaune
+    <input type="radio" name="colors" (click)="color='blue'">Bleu
+  </div>
+
+  <p [appColor]="color">Couleur</p>
+  <p [appColor]="color" defaultColor="violet"> Couleur par defaut</p>
+  <hr>
+  <p><i>Passer la souris sur le text</i></p>
+
+  <p [appColor]="'yellow'">Souligner en vert</p>
+  <p [appColor]="'orange'">Souligner en orange</p>
 </div>
+
+
